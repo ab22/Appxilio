@@ -66,6 +66,20 @@ function prettyDate(date) {
 	return dateStr;
 };
 
+
+
+setInterval(function(){
+	dtDenuncias.fnAddData(
+					[
+						prettyDate(new Date()),
+						'Pendiente',
+						'Descripcion de la denuncia',
+						'No'
+					],
+					true              //Redraw: false
+				);
+}, 3000);
+
 function padStr(i) {
     return (i < 10) ? "0" + i : "" + i;
 };	
@@ -86,7 +100,7 @@ function padStr(i) {
 						prettyDate(data.fecha),
 						data.estado,
 						data.descripcion,
-						data.esAnonima
+						data.esAnonima ? 'Sí' : 'No'
 					],
 					false               //Redraw: false
 				);
@@ -100,5 +114,6 @@ function padStr(i) {
 		}
 		});
 	};
+	
 	filterGrid("todas", "todas");
 });
