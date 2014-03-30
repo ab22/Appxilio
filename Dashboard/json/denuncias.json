@@ -13,8 +13,8 @@
         "estado": "atendida",
         "fecha": 1396182677859,
         "numeroCaso": "zLPVJE6Kk",
-        "comentarios": "",
-        "descripcion": "",
+        "comentarios": "Ha sido un problema comunitario",
+        "descripcion": "Esta denuncia fue la primera.",
         "imagenes": []
     },
     {
@@ -78,6 +78,23 @@
         "longitud": "-87.66354",
         "infoUsuario": {},
         "boton": "bomberos",
+        "esAnonima": true,
+        "esDenuncia": true,
+        "estado": "reportada",
+        "fecha": 1396183834033,
+        "numeroCaso": "OJ5B47qQ2",
+        "comentarios": "",
+        "descripcion": "",
+        "imagenes": [
+            "/image/descarga.jpg",
+            "/image/HolaMuno.jpg"
+        ]
+    },
+	{
+        "latitud": "15.88873",
+        "longitud": "-87.66354",
+        "infoUsuario": {},
+        "boton": "transito",
         "esAnonima": true,
         "esDenuncia": true,
         "estado": "reportada",

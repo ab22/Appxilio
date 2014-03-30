@@ -187,8 +187,8 @@ ImageHelp.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				Intent history = new Intent(getApplicationContext(), ComplaintHistory.class);
-				startActivity(history);
+			Intent history = new Intent(getApplicationContext(), ComplaintHistory.class);
+			startActivity(history);
 				
 				
 			}

@@ -24,6 +24,10 @@ app.configure(function(){
 app.use(express.multipart());
 });
 
+app.get('/incidencia', function(req, res) {
+    res.render('incidencia.handlebars');
+});
+
 app.get('/heatmap', function(req, res) {
     res.render('heatmap.handlebars');
 });
@@ -65,6 +69,26 @@ app.post('/image/add', function(req, res) {
 	});
     } 	
 });
+
+app.get('/denuncia/get/:id',function(req, res) {
+
+    fs.readFile('./json/denuncias.json', 'utf8', function (err, data) {
+        if (err) {
+            console.log('Error: ' + err);
+            return;
+        }
+
+        data = JSON.parse(data);
+
+        var output = data.filter(function(x){return x.numeroCaso==req.params.id});
+
+        res.writeHead(200,{'Content-Type': 'application/json'});
+        res.end(JSON.stringify(output));
+    });
+
+});
+
+
 
 app.get('/denuncia/getAll',function(req, res) {
 
@@ -327,6 +351,28 @@ fs.readFile('./json/denuncias.json', 'utf8', function (err, data) {
 				list.push(data[i]);
 			}
 		}
+  }
+  
+ 		
+  res.writeHead(200,{'Content-Type': 'application/json'});
+  res.end(JSON.stringify(list));
+    
+});
+
+});
+
+app.post('/test',function(req, res) {
+
+fs.readFile('./json/denuncias.json', 'utf8', function (err, data) {
+  if (err) {
+    console.log('Error: ' + err);
+    return;
+  }
+  data = JSON.parse(data);
+  var list = [];
+  for(var i=0; i<data.length; i++)
+  {
+	list.push(data[i] + req.body.valor);
   }
   
  		
