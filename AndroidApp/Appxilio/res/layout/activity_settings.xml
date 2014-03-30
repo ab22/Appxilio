@@ -15,20 +15,30 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="28dp"
         android:text="Configuración"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <ImageView
+        android:id="@+id/SaveImage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignRight="@+id/linearLayout1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/edit" />
+
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="21dp"
+        android:layout_below="@+id/SaveImage"
+        android:layout_marginTop="14dp"
         android:background="#FFFFFF"
         android:gravity="center"
-        android:orientation="vertical" android:id="@+id/linearLayout1">
+        android:orientation="vertical" >
 
         <Switch
             android:id="@+id/switchAnonimo"
@@ -44,7 +54,10 @@
             android:layout_marginTop="10dp"
             android:editable="false"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName" >
+
+            <requestFocus />
+        </EditText>
 
         <EditText
             android:id="@+id/editEmailText"
@@ -64,17 +77,5 @@
             android:ems="10"
             android:inputType="phone" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/button1"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/linearLayout1"
-        android:layout_marginTop="66dp"
-        android:gravity="center"
-        android:text="Guardar Cambios"
-        android:textAlignment="viewStart" />
 
 </RelativeLayout>
