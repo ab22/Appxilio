@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.app.Activity;
+import android.content.Intent;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -18,26 +20,58 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 import android.os.Build;
+import android.provider.Settings;
 
 public class MainActivity extends Activity {
 
-	public static int LONG_PRESS_TIME = 500; // Time in miliseconds
+	
 	boolean isSpeakButtonLongPressed = false;
+	ImageView police;
+	ImageView firefighter;
+	ImageView ambulance;
 
-	  final Handler _handler = new Handler(); 
-	  Runnable _longPressed = new Runnable() { 
-	      public void run() {
-	          Toast.makeText(getApplicationContext(), "Long press", Toast.LENGTH_SHORT).show();
-	      }   
-	  };
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		ImageView police = (ImageView)findViewById(R.id.imagePolice);
+		
+		LocationManager service = (LocationManager) getSystemService(LOCATION_SERVICE);
+		boolean enabled = service
+		  .isProviderEnabled(LocationManager.GPS_PROVIDER);
+
+		// check if enabled and if not send user to the GSP settings
+		// Better solution would be to display a dialog and suggesting to 
+		// go to the settings
+		if (!enabled) {
+		  Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+		  startActivity(intent);
+		}
+		
+		police = (ImageView)findViewById(R.id.imagePolice);
+		firefighter = (ImageView)findViewById(R.id.ImageFireFighter);
+		ambulance = (ImageView)findViewById(R.id.ImageAmbulance);
 		
 		police.setOnClickListener( new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+			 	
+				Toast.makeText(getApplicationContext(), "damn", Toast.LENGTH_SHORT).show();
+			}
+		});
+		
+		firefighter.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+			 	
+				Toast.makeText(getApplicationContext(), "damn", Toast.LENGTH_SHORT).show();
+			}
+		});
+		
+		ambulance.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
@@ -51,35 +85,94 @@ public class MainActivity extends Activity {
 			@Override
 			public boolean onLongClick(View v) {
 				 isSpeakButtonLongPressed = true;
-				 Toast.makeText(getApplicationContext(), "press begin", Toast.LENGTH_SHORT).show();
-	             return true;
+				 police.setImageDrawable(getResources().getDrawable(R.drawable.police_full));
+				 return true;
 			}
 		});
 		
-		police.setOnTouchListener(speakTouchListener);
+		firefighter.setOnLongClickListener(new OnLongClickListener() {
+			
+			@Override
+			public boolean onLongClick(View v) {
+				 isSpeakButtonLongPressed = true;
+				 firefighter.setImageDrawable(getResources().getDrawable(R.drawable.firefighter_full));
+				 return true;
+			}
+		});
+		
+		ambulance.setOnLongClickListener(new OnLongClickListener() {
+			
+			@Override
+			public boolean onLongClick(View v) {
+				 isSpeakButtonLongPressed = true;
+				 ambulance.setImageDrawable(getResources().getDrawable(R.drawable.ambulance_full));
+				 return true;
+			}
+		});
+		
+		
+		
+		
+		
+		
+		police.setOnTouchListener( new View.OnTouchListener()
+		{
+			 @Override
+	         public boolean onTouch(View pView, MotionEvent pEvent) {
+	              pView.onTouchEvent(pEvent);
+	              // We're only interested in when the button is released.
+	              if (pEvent.getAction() == MotionEvent.ACTION_UP) {
+	                   // We're only interested in anything if our speak button is currently pressed.
+	                   if (isSpeakButtonLongPressed) {
+	                	    police.setImageDrawable(getResources().getDrawable(R.drawable.police));
+	                        isSpeakButtonLongPressed = false;
+	                   }
+	              }
+	              return false;
+	         }
+	     
+		 });
+		
+		firefighter.setOnTouchListener( new View.OnTouchListener()
+		{
+			 @Override
+	         public boolean onTouch(View pView, MotionEvent pEvent) {
+	              pView.onTouchEvent(pEvent);
+	              // We're only interested in when the button is released.
+	              if (pEvent.getAction() == MotionEvent.ACTION_UP) {
+	                   // We're only interested in anything if our speak button is currently pressed.
+	                   if (isSpeakButtonLongPressed) {
+	                	   firefighter.setImageDrawable(getResources().getDrawable(R.drawable.firefighter));
+	                        isSpeakButtonLongPressed = false;
+	                   }
+	              }
+	              return false;
+	         }
+	     
+		 });
+		
+		ambulance.setOnTouchListener( new View.OnTouchListener()
+		{
+			 @Override
+	         public boolean onTouch(View pView, MotionEvent pEvent) {
+	              pView.onTouchEvent(pEvent);
+	              // We're only interested in when the button is released.
+	              if (pEvent.getAction() == MotionEvent.ACTION_UP) {
+	                   // We're only interested in anything if our speak button is currently pressed.
+	                   if (isSpeakButtonLongPressed) {
+	                	   ambulance.setImageDrawable(getResources().getDrawable(R.drawable.ambulance ));
+	                        isSpeakButtonLongPressed = false;
+	                   }
+	              }
+	              return false;
+	         }
+	     
+		 });
 	}
 	
-	 private View.OnTouchListener speakTouchListener = new View.OnTouchListener()
-	 {
-		 @Override
-         public boolean onTouch(View pView, MotionEvent pEvent) {
-              pView.onTouchEvent(pEvent);
-              // We're only interested in when the button is released.
-              if (pEvent.getAction() == MotionEvent.ACTION_UP) {
-                   // We're only interested in anything if our speak button is currently pressed.
-                   if (isSpeakButtonLongPressed) {
-                	   Toast.makeText(getApplicationContext(), "press end", Toast.LENGTH_SHORT).show();
-                        isSpeakButtonLongPressed = false;
-                   }
-              }
-              return false;
-         }
-     
-	 };
 	 
 	 
-
-        
+	       
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -91,33 +184,6 @@ public class MainActivity extends Activity {
 	
 	
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
-	/**
-	 * A placeholder fragment containing a simple view.
-	 */
-	public static class PlaceholderFragment extends Fragment {
-
-		public PlaceholderFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_main, container,
-					false);
-			return rootView;
-		}
-	}
+	
 
 }
