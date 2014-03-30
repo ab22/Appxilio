@@ -6,3 +6,4 @@
 
 # Ignore compiled objects
 node_modules/
+.idea/
