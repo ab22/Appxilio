@@ -19,4 +19,8 @@ app.get('/heatmap', function(req, res) {
     res.render('heatmap.handlebars');
 });
 
+app.get('/heattest', function(req, res) {
+    res.render('heattest.handlebars');
+});
+
 app.listen(3000);
