@@ -1,10 +1,18 @@
 package com.example.appxilio;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.telephony.TelephonyManager;
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,6 +28,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 import android.os.Build;
+import android.provider.ContactsContract;
 import android.provider.Settings;
 
 public class MainActivity extends Activity {
@@ -29,6 +38,7 @@ public class MainActivity extends Activity {
 	ImageView police;
 	ImageView firefighter;
 	ImageView ambulance;
+	ImageView ImageSettings;
 
 	
 	
@@ -48,10 +58,13 @@ public class MainActivity extends Activity {
 		  Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
 		  startActivity(intent);
 		}
-		
+		getFullName();
+		getUsername();
+		getMy10DigitPhoneNumber();
 		police = (ImageView)findViewById(R.id.imagePolice);
 		firefighter = (ImageView)findViewById(R.id.ImageFireFighter);
 		ambulance = (ImageView)findViewById(R.id.ImageAmbulance);
+		ImageSettings = (ImageView)findViewById(R.id.ImageSettings);
 		
 		police.setOnClickListener( new OnClickListener() {
 			
@@ -77,6 +90,16 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 			 	
 				Toast.makeText(getApplicationContext(), "damn", Toast.LENGTH_SHORT).show();
+			}
+		});
+		
+		ImageSettings.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent settings = new Intent(getApplicationContext(), SettingsActivity.class);
+				startActivity(settings);
+				
 			}
 		});
 		
@@ -181,6 +204,65 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	
+	
+	public String getUsername(){
+	    AccountManager manager = AccountManager.get(this); 
+	    Account[] accounts = manager.getAccountsByType("com.google"); 
+	    List<String> possibleEmails = new LinkedList<String>();
+
+	    for (Account account : accounts) {
+	      // TODO: Check possibleEmail against an email regex or treat
+	      // account.name as an email address only for certain account.type values.
+	      possibleEmails.add(account.name);
+	    }
+
+	    if(!possibleEmails.isEmpty() && possibleEmails.get(0) != null){
+	        String email = possibleEmails.get(0);
+	        String[] parts = email.split("@");
+	        if(parts.length > 0 && parts[0] != null)
+	            return parts[0];
+	        else
+	            return null;
+	    }else
+	        return null;
+	}
+	
+	private String getFullName()
+	{
+		Cursor c = this.getContentResolver().query(ContactsContract.Profile.CONTENT_URI, null, null, null, null);
+		int count = c.getCount();
+		String[] columnNames = c.getColumnNames();
+		boolean b = c.moveToFirst();
+		int position = c.getPosition();
+		if (count == 1 && position == 0) {
+		    for (int j = 0; j < columnNames.length; j++)
+		    {
+		    	int dfsb = 0;
+		        String columnName = columnNames[j];
+		        String columnValue = c.getString(c.getColumnIndex(columnName));
+		        int a = 3;
+		        int suma = 2;
+		        dfsb = a + suma;
+		        //Use the values
+		    }
+		}
+		c.close();
+		return "";
+		
+	}
+	
+	
+	private String getMyPhoneNumber(){
+		TelephonyManager tm = (TelephonyManager)getSystemService(TELEPHONY_SERVICE); 
+		String number = tm.getLine1Number();
+        return number;
+    }
+
+    private String getMy10DigitPhoneNumber(){
+        String s = getMyPhoneNumber();
+        return s.substring(2);
+    }
 	
 	
 
