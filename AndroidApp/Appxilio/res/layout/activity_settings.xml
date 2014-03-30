@@ -2,12 +2,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/background_gradient"    
     tools:context="com.example.appxilio.SettingsActivity$PlaceholderFragment" >
+
+    <TextView
+        android:id="@+id/textNameUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/SwitchAnonimus"
+        android:layout_below="@+id/SwitchAnonimus"
+        android:layout_marginTop="29dp"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/TextPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/SwitchAnonimus"
+        android:layout_below="@+id/textNameUser"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/TextEmailUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/SwitchAnonimus"
+        android:layout_below="@+id/TextPhoneNumber"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Switch
         android:id="@+id/SwitchAnonimus"
@@ -15,8 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="62dp"
-        android:text="Switch"
-        android:background="#FFFFFF" />
+        android:layout_marginTop="78dp"
+        android:text="Anonimo" />
 
 </RelativeLayout>
