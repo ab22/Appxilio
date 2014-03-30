@@ -11,14 +11,12 @@ app.configure(function(){
     app.use(express.static(__dirname + '/public'));
 });
 
-
+app.get('/heatmap', function(req, res) {
+    res.render('heatmap.handlebars');
+});
 
 app.get('/', function (req, res) {
     res.render('dashboard.handlebars');
-});
-
-app.get('/heatmap', function(req, res) {
-    res.render('heatmap.handlebars');
 });
 
 app.get('/statistics', function(req, res) {
