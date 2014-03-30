@@ -241,7 +241,7 @@ function data(map){
 {lat:15.48035197,lon:-87.94905273,count: 2},
 {lat:15.47418169,lon:-87.94563932,count: 3},
 {lat:15.46931395,lon:-87.95650996,count: 4},
-{lat:15.47035332,lon:-87.95143902,count: 5}]
+{lat:15.47035332,lon:-87.95143902,count: 5}]us
                 };
 
     var transformedTestData = { max: testData.max , data: [] },

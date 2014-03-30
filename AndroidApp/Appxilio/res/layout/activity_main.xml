@@ -1,8 +1,80 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.appxilio.MainActivity"
-    tools:ignore="MergeRootFrame" />
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background_gradient"
+    tools:context="com.example.appxilio.MainActivity$PlaceholderFragment" >
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/ImageHistory"
+        android:src="@drawable/help" />
+
+    <ImageView
+        android:id="@+id/ImageFireFighter"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/ImageAmbulance"
+        android:layout_below="@+id/imagePolice"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/firefighter" />
+
+    <ImageView
+        android:id="@+id/ImageAmbulance"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/ImageFireFighter"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ambulance" />
+
+    <ImageView
+        android:id="@+id/ImageStatus"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/ImageHistory"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/estadoreportada" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/imageView1"
+        android:src="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imagePolice"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/ImageFireFighter"
+        android:layout_below="@+id/ImageStatus"
+        android:layout_marginTop="71dp"
+        android:src="@drawable/police" />
+
+    <ImageView
+        android:id="@+id/ImageSettings"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/imagePolice"
+        android:layout_toRightOf="@+id/imagePolice"
+        android:src="@drawable/settings" />
+
+    <ImageView
+        android:id="@+id/ImageHistory"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="9dp"
+        android:layout_toLeftOf="@+id/imageView1"
+        android:src="@drawable/history" />
+   
+</RelativeLayout>
