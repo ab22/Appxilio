@@ -69,15 +69,7 @@ function prettyDate(date) {
 
 
 setInterval(function(){
-	dtDenuncias.fnAddData(
-					[
-						prettyDate(new Date()),
-						'Pendiente',
-						'Descripcion de la denuncia',
-						'No'
-					],
-					true              //Redraw: false
-				);
+	filterGrid(selectedState.toLowerCase(), selectedType.toLowerCase());
 }, 3000);
 
 function padStr(i) {
