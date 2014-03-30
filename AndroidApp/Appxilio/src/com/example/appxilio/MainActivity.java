@@ -39,6 +39,7 @@ public class MainActivity extends Activity {
 	ImageView firefighter;
 	ImageView ambulance;
 	ImageView ImageSettings;
+	ImageView ImageHistory;
 	String FullName;
 	String email;
 	String Phone;
@@ -68,6 +69,7 @@ public class MainActivity extends Activity {
 		firefighter = (ImageView)findViewById(R.id.ImageFireFighter);
 		ambulance = (ImageView)findViewById(R.id.ImageAmbulance);
 		ImageSettings = (ImageView)findViewById(R.id.ImageSettings);
+		ImageHistory = (ImageView)findViewById(R.id.ImageHistory);
 		
 		police.setOnClickListener( new OnClickListener() {
 			
@@ -141,7 +143,16 @@ public class MainActivity extends Activity {
 		});
 		
 		
-		
+		ImageHistory.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent history = new Intent(getApplicationContext(), ComplaintHistory.class);
+				startActivity(history);
+				
+				
+			}
+		});
 		
 		
 		

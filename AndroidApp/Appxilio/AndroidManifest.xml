@@ -31,12 +31,16 @@
         </activity>
         <activity
             android:name="com.example.appxilio.SettingsActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/title_activity_settings" >
+            android:label="@string/title_activity_settings"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.example.appxilio.HelpActivity"
             android:label="@string/title_activity_help" >
+        </activity>
+        <activity
+            android:name="com.example.appxilio.ComplaintHistory"
+            android:label="@string/title_activity_complaint_history" >
         </activity>
     </application>
 
