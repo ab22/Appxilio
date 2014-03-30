@@ -249,12 +249,14 @@ int drawable police 0x7f020066
 int drawable police_full 0x7f020067
 int drawable save 0x7f020068
 int drawable settings 0x7f020069
+int id FirstText 0x7f06004e
 int id ImageAmbulance 0x7f060041
 int id ImageFireFighter 0x7f060040
 int id ImageHistory 0x7f06003f
 int id ImageSettings 0x7f060045
 int id ImageStatus 0x7f060043
 int id SaveImage 0x7f060047
+int id SecondText 0x7f06004f
 int id action_bar 0x7f06001c
 int id action_bar_activity_content 0x7f060015
 int id action_bar_container 0x7f06001b
@@ -266,7 +268,7 @@ int id action_context_bar 0x7f06001d
 int id action_menu_divider 0x7f060016
 int id action_menu_presenter 0x7f060017
 int id action_mode_close_button 0x7f060024
-int id action_settings 0x7f06004d
+int id action_settings 0x7f060050
 int id activity_chooser_view_content 0x7f060025
 int id always 0x7f06000b
 int id beginning 0x7f060011
@@ -303,6 +305,7 @@ int id normal 0x7f060000
 int id progress_circular 0x7f060018
 int id progress_horizontal 0x7f060019
 int id radio 0x7f06002f
+int id relativeLayout1 0x7f06004d
 int id search_badge 0x7f060032
 int id search_bar 0x7f060031
 int id search_button 0x7f060033
@@ -356,7 +359,9 @@ int layout activity_help 0x7f030018
 int layout activity_main 0x7f030019
 int layout activity_settings 0x7f03001a
 int layout fragment_complaint_history 0x7f03001b
-int layout support_simple_spinner_dropdown_item 0x7f03001c
+int layout fragment_main 0x7f03001c
+int layout listview_row 0x7f03001d
+int layout support_simple_spinner_dropdown_item 0x7f03001e
 int menu complaint_history 0x7f0e0000
 int menu help 0x7f0e0001
 int menu main 0x7f0e0002
@@ -596,7 +601,7 @@ int styleable MenuItem_android_title 7
 int styleable MenuItem_android_titleCondensed 8
 int styleable MenuItem_android_visible 4
 int styleable MenuItem_showAsAction 13
-int[] styleable MenuView { 0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e, 0x0101012f, 0x01010130, 0x01010131, 0x01010435 }
+int[] styleable MenuView { 0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e, 0x0101012f, 0x01010130, 0x01010131, 0x0101040c }
 int styleable MenuView_android_headerBackground 4
 int styleable MenuView_android_horizontalDivider 2
 int styleable MenuView_android_itemBackground 5
