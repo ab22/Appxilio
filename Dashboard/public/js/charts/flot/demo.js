@@ -414,23 +414,23 @@ $(function(){
 
   var da = [
     {
-      label: "iPhone5S",
+      label: "Incendios",
       data: 40
     },    
     {
-      label: "iPad Mini",
+      label: "Accidentes de Tráfico",
       data: 10
     },
     {
-      label: "iPad Mini Retina",
+      label: "Rescates medicos",
       data: 20
     },
     {
-      label: "iPhone4S",
+      label: "Robos/Asaltos",
       data: 12
     },
     {
-      label: "iPad Air",
+      label: "Otros",
       data: 18
     }
   ], 
