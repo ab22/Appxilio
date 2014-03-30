@@ -89,5 +89,22 @@
             "/image/descarga.jpg",
             "/image/HolaMuno.jpg"
         ]
+    },
+	{
+        "latitud": "15.88873",
+        "longitud": "-87.66354",
+        "infoUsuario": {},
+        "boton": "transito",
+        "esAnonima": true,
+        "esDenuncia": true,
+        "estado": "reportada",
+        "fecha": 1396183834033,
+        "numeroCaso": "OJ5B47qQ2",
+        "comentarios": "",
+        "descripcion": "",
+        "imagenes": [
+            "/image/descarga.jpg",
+            "/image/HolaMuno.jpg"
+        ]
     }
 ]
