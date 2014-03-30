@@ -31,18 +31,18 @@ public class HelpActivity extends Activity {
         list = new ArrayList<HashMap<String,String>>();
  
         HashMap<String, String> temp = new HashMap<String, String>();
-            temp.put(FIRST_COLUMN,"Colored Notebooks");
-            temp.put(SECOND_COLUMN, "By NavNeet");
+            temp.put(FIRST_COLUMN,"\n911\n(Emergencias)\n");
+            temp.put(SECOND_COLUMN, "\nLlamar en caso de querer contactarse con la policia. En caso de incendios y querer contactarse con los bomberos. Para reportar y recibir asistencia con respecto accidentes de transito y en caso de sufrir maltrato domestico.\n");
         list.add(temp);
  
         HashMap<String, String> temp1 = new HashMap<String, String>();
-            temp1.put(FIRST_COLUMN,"Diaries");
-            temp1.put(SECOND_COLUMN, "By Amee Products");
+            temp1.put(FIRST_COLUMN,"\n2237-1800\n2220-6248\n(Cruz Roja)\n");
+            temp1.put(SECOND_COLUMN, "\nAl ocurrir una emergencia medica de caracter urgente.\n");
         list.add(temp1);
  
         HashMap<String, String> temp2 = new HashMap<String, String>();
-            temp2.put(FIRST_COLUMN,"Note Books and Stationery");
-            temp2.put(SECOND_COLUMN, "By National Products");
+            temp2.put(FIRST_COLUMN,"\n2234-4400\n2234-8409\n(COPECO)\n");
+            temp2.put(SECOND_COLUMN, "\nOrientada a la prevención y reducción del riesgo, la atención de las emergencias, la recuperación y adaptación al cambio climático para garantizar la vida, los bienes materiales y ambientales de la nación.\n");
         list.add(temp2);
     }
 
