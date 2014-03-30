@@ -15,7 +15,7 @@ $(document).ready(function(){
 		return false;		
     });
 	
-	
+		
 	$('.btn-group-state button').first().trigger("click");
 	$('.btn-group-type button').first().trigger("click");
 });
