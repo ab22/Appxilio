@@ -147,8 +147,8 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Intent history = new Intent(getApplicationContext(), ComplaintHistory.class);
-				startActivity(history);
+			Intent history = new Intent(getApplicationContext(), ComplaintHistory.class);
+			startActivity(history);
 				
 				
 			}
