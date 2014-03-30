@@ -39,6 +39,9 @@ public class MainActivity extends Activity {
 	ImageView firefighter;
 	ImageView ambulance;
 	ImageView ImageSettings;
+	String FullName;
+	String email;
+	String Phone;
 
 	
 	
@@ -58,9 +61,9 @@ public class MainActivity extends Activity {
 		  Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
 		  startActivity(intent);
 		}
-		getFullName();
-		getUsername();
-		getMy10DigitPhoneNumber();
+		FullName = getFullName();
+		email = getUsername();
+		
 		police = (ImageView)findViewById(R.id.imagePolice);
 		firefighter = (ImageView)findViewById(R.id.ImageFireFighter);
 		ambulance = (ImageView)findViewById(R.id.ImageAmbulance);
@@ -98,6 +101,10 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent settings = new Intent(getApplicationContext(), SettingsActivity.class);
+				Bundle bundle = new Bundle();
+				bundle.putString("Name",FullName);  
+                bundle.putString("Email",email);
+               settings.putExtras(bundle);   
 				startActivity(settings);
 				
 			}
@@ -219,13 +226,9 @@ public class MainActivity extends Activity {
 
 	    if(!possibleEmails.isEmpty() && possibleEmails.get(0) != null){
 	        String email = possibleEmails.get(0);
-	        String[] parts = email.split("@");
-	        if(parts.length > 0 && parts[0] != null)
-	            return parts[0];
-	        else
-	            return null;
-	    }else
-	        return null;
+	        return email;
+	    }
+	    return null;
 	}
 	
 	private String getFullName()
@@ -238,13 +241,15 @@ public class MainActivity extends Activity {
 		if (count == 1 && position == 0) {
 		    for (int j = 0; j < columnNames.length; j++)
 		    {
-		    	int dfsb = 0;
+		    	
 		        String columnName = columnNames[j];
 		        String columnValue = c.getString(c.getColumnIndex(columnName));
-		        int a = 3;
-		        int suma = 2;
-		        dfsb = a + suma;
-		        //Use the values
+		        if(columnName.compareTo("display_name")==0)
+		        {
+		        	c.close();
+		        	return columnValue;
+		        }
+		        
 		    }
 		}
 		c.close();
