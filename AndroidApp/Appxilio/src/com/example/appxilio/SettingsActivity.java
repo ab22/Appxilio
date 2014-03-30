@@ -10,24 +10,25 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.os.Build;
 
 public class SettingsActivity extends Activity {
 
-	TextView NameUser;
-	TextView Email;
+	EditText NameUser;
+	EditText Email;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_settings);
-		NameUser = (TextView)findViewById(R.id.textNameUser);
-		Email = (TextView)findViewById(R.id.TextEmailUser);
+		NameUser = (EditText)findViewById(R.id.editNameText);
+		Email = (EditText)findViewById(R.id.editEmailText);
 		
 		NameUser.setText(getIntent().getExtras().getString("Name"));
 		Email.setText(getIntent().getExtras().getString("Email"));
-
-	
+		NameUser.setEnabled(false);
+		Email.setEnabled(false);
 	}
 
 	@Override
