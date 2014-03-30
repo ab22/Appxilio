@@ -4,30 +4,96 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.os.Build;
+import android.preference.PreferenceManager;
 
 public class SettingsActivity extends Activity {
 
-	TextView NameUser;
-	TextView Email;
+	EditText NameUser;
+	EditText Email;
+	EditText Phone;
+	Switch SwitchAnonimo;
+	ImageView SaveButtonImage;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_settings);
-		NameUser = (TextView)findViewById(R.id.textNameUser);
-		Email = (TextView)findViewById(R.id.TextEmailUser);
+		NameUser = (EditText)findViewById(R.id.editNameText);
+		Email = (EditText)findViewById(R.id.editEmailText);
+		Phone = (EditText)findViewById(R.id.editPhoneText);
+		SwitchAnonimo = (Switch)findViewById(R.id.switchAnonimo);
+		SaveButtonImage = (ImageView)findViewById(R.id.SaveImage);
 		
 		NameUser.setText(getIntent().getExtras().getString("Name"));
 		Email.setText(getIntent().getExtras().getString("Email"));
-
-	
+		NameUser.setEnabled(false);
+		Email.setEnabled(false);
+		
+		final SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+		boolean bool = settings.getBoolean("anonimo", true);
+		SwitchAnonimo.setChecked(bool);
+		
+		String telefono = settings.getString("telefono", "");
+		if(telefono.compareTo("")==0)
+		{
+			
+			Phone.setEnabled(true);
+			SwitchAnonimo.setEnabled(true);
+			SaveButtonImage.setImageDrawable(getResources().getDrawable(R.drawable.save));
+			
+		}else
+		{
+			Phone.setText(telefono);
+			Phone.setEnabled(false);
+			SwitchAnonimo.setEnabled(false);	
+			
+		}
+		
+		
+		SaveButtonImage.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				if(Phone.isEnabled())
+				{
+					SaveButtonImage.setImageDrawable(getResources().getDrawable(R.drawable.edit));
+					SharedPreferences.Editor editor = settings.edit();
+					editor.putString("telefono",Phone.getText().toString());
+					editor.putBoolean("anonimo", SwitchAnonimo.isChecked());
+					editor.commit();
+					Phone.setEnabled(false);
+					SwitchAnonimo.setEnabled(false);	
+					
+				}else
+				{
+					SaveButtonImage.setImageDrawable(getResources().getDrawable(R.drawable.save));
+					Phone.setEnabled(true);
+					SwitchAnonimo.setEnabled(true);
+				}
+				
+			}
+		});
+		
+		
+		/*
+		 *SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+  SharedPreferences.Editor editor = preferences.edit();
+  editor.putString("Name","Harneet");
+  editor.commit();
+		 */
 	}
 
 	@Override

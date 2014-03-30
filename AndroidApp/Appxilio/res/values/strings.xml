@@ -5,5 +5,15 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_settings">MainActivity</string>
+    <string name="title_activity_help">HelpActivity</string>
+    <string name="title_activity_complaint_history">ComplaintHistory</string>
+    <string name="color_stripe">Color Stripe</string>
+    <string name="ListadeFacturas">Lista de Facturas Emitidas hoy</string>
+    <string name="title">Title</string>
+    <string name="overflow">Menu Overflow</string>
+    <string name="title_activity_card_history">CardHistoryActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_history">History</string>
 
 </resources>

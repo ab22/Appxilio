@@ -361,6 +361,28 @@ fs.readFile('./json/denuncias.json', 'utf8', function (err, data) {
 
 });
 
+app.post('/test',function(req, res) {
+
+fs.readFile('./json/denuncias.json', 'utf8', function (err, data) {
+  if (err) {
+    console.log('Error: ' + err);
+    return;
+  }
+  data = JSON.parse(data);
+  var list = [];
+  for(var i=0; i<data.length; i++)
+  {
+	list.push(data[i] + req.body.valor);
+  }
+  
+ 		
+  res.writeHead(200,{'Content-Type': 'application/json'});
+  res.end(JSON.stringify(list));
+    
+});
+
+});
+
 
 
 app.listen(3000);

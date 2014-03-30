@@ -19,7 +19,7 @@
 														<h4 style="margin:0">Estado de denuncia</h4>
 													    <br />												
 															<div class="btn-group btn-group-state">
-																<button type="button" class="btn btn-default">Todas</button> 
+																<button type="button" class="btn btn-default btn-success">Todas</button> 
 																<button type="button" class="btn btn-default btn-state">Pendientes</button> 
 																<button type="button" class="btn btn-default btn-state">Atendidas</button> 
 																<button type="button" class="btn btn-default btn-state">En Proceso</button>
@@ -32,7 +32,7 @@
 														<h4 style="margin:0">Tipo de denuncia</h4>
 													    <br />														
 															<div class="btn-group btn-group-type">
-																<button type="button" class="btn btn-default">Todas</button> 
+																<button type="button" class="btn btn-default btn-success">Todas</button> 
 																<button type="button" class="btn btn-default">Transito</button> 
 																<button type="button" class="btn btn-default">Violencia</button> 
 																<button type="button" class="btn btn-default">Incendios</button>
@@ -54,14 +54,13 @@
 																	<section class="panel panel-default">
 																	  
 																	  <div class="table-responsive">
-																		<table class="table table-striped m-b-none" data-ride="datatables">
+																		<table id="dtDenuncias" class="table table-striped m-b-none" data-ride="datatables">
 																		  <thead>
 																			<tr>
-																			  <th width="20%">Rendering engine</th>
-																			  <th width="25%">Browser</th>
-																			  <th width="25%">Platform(s)</th>
-																			  <th width="15%">Engine version</th>
-																			  <th width="15%">CSS grade</th>
+																			  <th width="20%">Fecha</th>
+																			  <th width="25%">Estado</th>
+																			  <th width="25%">Descripción</th>
+																			  <th width="15%">Anonima</th>
 																			</tr>
 																		  </thead>
 																		  <tbody>
