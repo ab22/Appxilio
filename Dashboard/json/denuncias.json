@@ -1,0 +1,93 @@
+[
+    {
+        "latitud": "15.88873",
+        "longitud": "-87.66354",
+        "infoUsuario": {
+            "nombreCompleto": "Jose Caste",
+            "correoElectronico": "jcaste@gmail.com",
+            "numeroTelefono": "34327724"
+        },
+        "boton": "policia",
+        "esAnonima": false,
+        "esDenuncia": false,
+        "estado": "atendida",
+        "fecha": 1396182677859,
+        "numeroCaso": "zLPVJE6Kk",
+        "comentarios": "",
+        "descripcion": "",
+        "imagenes": []
+    },
+    {
+        "latitud": "15.88873",
+        "longitud": "-87.66354",
+        "infoUsuario": {},
+        "boton": "policia",
+        "esAnonima": true,
+        "esDenuncia": false,
+        "estado": "reportada",
+        "fecha": 1396182840489,
+        "numeroCaso": "NOKB4bzbv",
+        "comentarios": "",
+        "descripcion": "",
+        "imagenes": []
+    },
+    {
+        "latitud": "15.88873",
+        "longitud": "-87.66354",
+        "infoUsuario": {
+            "nombreCompleto": "Walter Suazo",
+            "correoElectronico": "waltersuazo2002@gmail.com",
+            "numeroTelefono": "33324724"
+        },
+        "boton": "bomberos",
+        "esAnonima": false,
+        "esDenuncia": false,
+        "estado": "reportada",
+        "fecha": 1396182983499,
+        "numeroCaso": "kN4PlxW8V",
+        "comentarios": "",
+        "descripcion": "",
+        "imagenes": []
+    },
+    {
+        "latitud": "15.88873",
+        "longitud": "-87.66354",
+        "infoUsuario": {
+            "nombreCompleto": "Walter Suazo",
+            "correoElectronico": "waltersuazo2002@gmail.com",
+            "numeroTelefono": "33324724"
+        },
+        "boton": "bomberos",
+        "esAnonima": false,
+        "esDenuncia": true,
+        "estado": "cerrada",
+        "fecha": 1396183792423,
+        "numeroCaso": "Y7aPbx8jx",
+        "comentarios": "Se murio Leonel!",
+        "descripcion": "Mi mujer Leonel-a me pega!",
+        "imagenes": [
+            "/image/descarga.jpg",
+            "/image/HolaMuno.jpg",
+            "/image/descarga.jpg",
+            "/image/HolaMuno.jpg"
+        ],
+        "tipoDenuncia": "violencia"
+    },
+    {
+        "latitud": "15.88873",
+        "longitud": "-87.66354",
+        "infoUsuario": {},
+        "boton": "bomberos",
+        "esAnonima": true,
+        "esDenuncia": true,
+        "estado": "reportada",
+        "fecha": 1396183834033,
+        "numeroCaso": "OJ5B47qQ2",
+        "comentarios": "",
+        "descripcion": "",
+        "imagenes": [
+            "/image/descarga.jpg",
+            "/image/HolaMuno.jpg"
+        ]
+    }
+]

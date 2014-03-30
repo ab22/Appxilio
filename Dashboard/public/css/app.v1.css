@@ -11199,7 +11199,7 @@ a.list-group-item:hover, a.list-group-item:focus {
 }
 
 .bg-black .nav-primary > ul.nav-main > li:hover > a, .bg-black .nav-primary > ul.nav-main > li:focus > a, .bg-black .nav-primary > ul.nav-main > li:active > a, .bg-black .nav-primary > ul.nav-main > li.active > a {
-    background-color: #1aae88;
+    background-color: #5E7D66;
 }
 
 @media (min-width: 768px) {
