@@ -40,6 +40,7 @@ public class MainActivity extends Activity {
 	ImageView ambulance;
 	ImageView ImageSettings;
 	ImageView ImageHistory;
+	ImageView ImageHelp;
 	String FullName;
 	String email;
 	String Phone;
@@ -70,6 +71,7 @@ public class MainActivity extends Activity {
 		ambulance = (ImageView)findViewById(R.id.ImageAmbulance);
 		ImageSettings = (ImageView)findViewById(R.id.ImageSettings);
 		ImageHistory = (ImageView)findViewById(R.id.ImageHistory);
+		ImageHelp = (ImageView)findViewById(R.id.imageView1);
 		
 		police.setOnClickListener( new OnClickListener() {
 			
@@ -108,6 +110,17 @@ public class MainActivity extends Activity {
                 bundle.putString("Email",email);
                settings.putExtras(bundle);   
 				startActivity(settings);
+				
+			}
+		});
+		
+ImageHelp.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent help = new Intent(getApplicationContext(), HelpActivity.class);
+
+				startActivity(help);
 				
 			}
 		});
